@@ -26,8 +26,8 @@ export default function App() {
   const [navBar, setNavBar] = useState(false);
 
   useEffect(() => {
-    setToggleTaskDisplay(!(toggleAddModal || commentsModal));
-  }, [toggleAddModal, commentsModal]);
+    setToggleTaskDisplay(!(toggleAddModal || commentsModal || roadModal));
+  }, [toggleAddModal, commentsModal, roadModal]);
 
   const tags = ["All", "UI", "UX", "Enhancement", "Bug", "Feature"];
   const handleAddFeedbackClick = () => {
@@ -70,9 +70,6 @@ export default function App() {
   const handleOpenRoadModal = (data) => {
     setRoadModal(data);
     setToggleTaskDisplay(false);
-    if (roadModal === true) {
-      setToggleTaskDisplay(true);
-    }
   };
 
   const handleCounts = (plannedCount, inProgressCount, liveCount) => {
@@ -182,22 +179,4 @@ export default function App() {
       ) : null}
     </>
   );
-}
-{
-  /* zrobic modala z displea taskow?
-  /* przeslac filter z roadmapmodal do displeyed tasks i wysiwtlic je na nowo albo wyswietlic je w roadmap z switchem w roadmap
-  /* pos FIXED!
- /* ostyluj roadmape i zmniejsz jeszcze comp nav i popraw vote counter
- /* fireBase!!!!!
-  /*  https://www.w3schools.com/react/react_router.asp
-
-  /* https://www.youtube.com/watch?v=TNhaISOUy6Q react hooks
-  /* https://www.w3schools.com/react/react_usecontext.asp hooks 3w
-
-  /* ostyluj com modala
-  /*https://chat.openai.com/c/ea3c6aad-3db4-4c63-84d4-5db248302374*/
-}
-{
-  /* cisnij cipo bo sie zesrasz*/
-  /* https://www.youtube.com/watch?v=MZVnRYpWx0w&list=PLvyZdqt1XP-mArXXKH9ZpK6h02nyeRZDs&index=29*/
 }
