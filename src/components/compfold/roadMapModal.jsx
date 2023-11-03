@@ -20,7 +20,7 @@ export default function RoadMapModal({ allTasks, setRoadModal, handleCounts }) {
 
   const filterByStatus = () => {
     const completeTasks = allTasks.filter(
-      (item) => item.status === activeButton
+      (item) => item.status === activeButton,
     );
     setDisplayedTasks(completeTasks);
   };
@@ -63,13 +63,13 @@ export default function RoadMapModal({ allTasks, setRoadModal, handleCounts }) {
   }, [planned, inProgress, live]);
 
   return (
-    <div className="absolute inset-0 w-full h-full p-5 bg-white">
+    <div className="absolute inset-0 h-full w-full bg-white p-5">
       <button onClick={() => setRoadModal(false)}>close</button>
-      <div className="topbar flex row justify-between w-full h-10 text-white bg-[#373F68]">
+      <div className="topbar row flex h-10 w-full justify-between bg-[#373F68] text-white">
         <h1>Roadmap</h1>
         <button>Add Feedback</button>
       </div>{" "}
-      <div className="status-btn flex items-center  justify-between p-5 text-xs font-bold  text-[#3A4374] gap-6">
+      <div className="status-btn flex items-center  justify-between gap-6 p-5 text-xs  font-bold text-[#3A4374]">
         <button
           className={activeButton === "planned" ? "text-[#000000]" : null}
           onClick={() => handleButtonClick("planned")}
@@ -90,7 +90,7 @@ export default function RoadMapModal({ allTasks, setRoadModal, handleCounts }) {
         </button>
       </div>
       <div
-        className="cols flex flex-col row justify-between"
+        className="cols row flex flex-col justify-between"
         ref={containerRef}
       >
         <TasksDispley displayedTasks={displayedTasks} />

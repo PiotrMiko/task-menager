@@ -50,10 +50,10 @@ export default function ComModal({
     <>
       <div className="absolute inset-0 bg-[#F7F8FD]">
         {" "}
-        <div className="btn-cont flex row items-center justify-between pt-2 pr-4 pb-2 pl-4 w-full">
+        <div className="btn-cont row flex w-full items-center justify-between pb-2 pl-4 pr-4 pt-2">
           {" "}
           <button
-            className="flex row justify-between align-baseline items-center gap-4"
+            className="row flex items-center justify-between gap-4 align-baseline"
             onClick={() => setCommentsModal(false)}
           >
             <svg
@@ -73,7 +73,7 @@ export default function ComModal({
             <p className="text-xs font-bold text-[#647196]">Go back</p>
           </button>{" "}
           <button
-            className="bg-[#4661E6] rounded-main text-sm font-bold text-[#FFFFFF] pl-4 pr-4 pt-4 pb-4"
+            className="rounded-main bg-[#4661E6] pb-4 pl-4 pr-4 pt-4 text-sm font-bold text-[#FFFFFF]"
             onClick={editModalActive}
           >
             Edit Feedback
@@ -82,18 +82,18 @@ export default function ComModal({
         {/*component task start*/}
         <div
           // key={item.id}
-          className="flex flex-col items-start m-4 p-5 
-       bg-white rounded-main"
+          className="m-4 flex flex-col items-start rounded-main 
+       bg-white p-5"
           // onClick={() => handleTaskDisplay(item)}
         >
-          <div className="text-md font-bold pb-4">{joice.title}</div>{" "}
-          <div className="text-md font-normal pb-4">{joice.feedback}</div>{" "}
-          <div className="pt-2 mb-4 pr-4 pb-2 pl-4 rounded-main bg-whiteGrey 	text-transform: capitalize text-md font-semibold text-navyBlue">
+          <div className="text-md pb-4 font-bold">{joice.title}</div>{" "}
+          <div className="text-md pb-4 font-normal">{joice.feedback}</div>{" "}
+          <div className="text-transform: text-md mb-4 rounded-main bg-whiteGrey pb-2 pl-4 	pr-4 pt-2 font-semibold capitalize text-navyBlue">
             {joice.tag}
           </div>
-          <div className="clickbar flex row  justify-between items-center w-full pt-2  pb-2  rounded-main text-transform: capitalize text-md font-semibold">
+          <div className="clickbar row text-transform: text-md flex w-full items-center justify-between rounded-main pb-2 pt-2 font-semibold capitalize">
             <div
-              className="flex row pt-2 pr-4 pb-2 pl-4 align-baseline items-center gap-4 bg-whiteGrey rounded-main"
+              className="row flex items-center gap-4 rounded-main bg-whiteGrey pb-2 pl-4 pr-4 pt-2 align-baseline"
               // onClick={(e) => {
               //   e.stopPropagation(); // stop event propagation
               //   handleVoteCounter(e);
@@ -134,16 +134,16 @@ export default function ComModal({
           </div>{" "}
         </div>
         {/*component task and*/}
-        <div className="commentBox  m-4 p-4 bg-white rounded-main">
+        <div className="commentBox  m-4 rounded-main bg-white p-4">
           {" "}
           <span className="text-lg font-bold ">Comments</span>
           {joice.comments.map((comment, index) => (
             <div
               key={index}
-              className="flex-col justify-between gap-8 animate-fadeIn"
+              className="animate-fadeIn flex-col justify-between gap-8"
             >
               {" "}
-              <div className="flex row justify-between items-center mt-5 ">
+              <div className="row mt-5 flex items-center justify-between ">
                 <div className="profile">Post id: {joice.id}</div>
                 <button
                   className="text-md font-semibold text-[#4661E6]"
@@ -162,7 +162,7 @@ export default function ComModal({
                 comment.replies.map((reply, idx) => (
                   <div
                     key={idx}
-                    className="ml-4 pt-2 text-md font-normal text-[#647196]"
+                    className="text-md ml-4 pt-2 font-normal text-[#647196]"
                   >
                     {reply}
                   </div>
@@ -170,19 +170,19 @@ export default function ComModal({
               <div
                 className={
                   activeReplyIndex === index
-                    ? "flex row justify-between items-start align-top pt-4 gap-4"
+                    ? "row flex items-start justify-between gap-4 pt-4 align-top"
                     : "hidden"
                 }
               >
                 <textarea
-                  className="w-full h-20 bg-whiteMedium  rounded-main resize-none p-4 focus:border-purple"
+                  className="h-20 w-full resize-none  rounded-main bg-whiteMedium p-4 focus:border-purple"
                   type="text"
                   value={reply}
                   onChange={(e) => setReply(e.target.value)}
                 />
 
                 <button
-                  className="text-sm font-bold pl-4 p-2 pr-4 pb-2 w-40 bg-purple text-white rounded-main"
+                  className="w-40 rounded-main bg-purple p-2 pb-2 pl-4 pr-4 text-sm font-bold text-white"
                   onClick={addReply}
                 >
                   Post reply
@@ -193,16 +193,16 @@ export default function ComModal({
             </div>
           ))}
         </div>
-        <div className="commentInput m-4 p-4  bg-white rounded-main">
+        <div className="commentInput m-4 rounded-main  bg-white p-4">
           <p className="text-lg  font-bold">Add Comment</p>
           <textarea
             type="textarea"
-            className="w-full h-24 bg-whiteMedium  rounded-main resize-none p-4 focus:border-purple"
+            className="h-24 w-full resize-none  rounded-main bg-whiteMedium p-4 focus:border-purple"
             value={values}
             onChange={inputValue}
             placeholder="Type your comments here"
           />
-          <div className="flex row justify-between align-baseline items-center mt-2">
+          <div className="row mt-2 flex items-center justify-between align-baseline">
             <span
               className="text-xs
 font-normal text-[#647196]"
@@ -217,7 +217,7 @@ font-normal text-[#647196]"
               Characters left
             </span>{" "}
             <button
-              className="bg-purple rounded-main text-xs font-bold text-white pl-4 pr-4 pt-4 pb-4"
+              className="rounded-main bg-purple pb-4 pl-4 pr-4 pt-4 text-xs font-bold text-white"
               onClick={addComment}
             >
               Post Comment

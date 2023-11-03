@@ -22,17 +22,17 @@ export default function TasksDispley({
         {displayedTasks.map((item) => (
           <div
             key={item.id}
-            className="flex flex-col items-start m-4 p-5 bg-white rounded-main "
+            className="m-4 flex flex-col items-start rounded-main bg-white p-5 "
             onClick={() => handleTaskDisplay(item)}
           >
-            <div className="text-md font-bold pb-4">{item.title}</div>{" "}
-            <div className="text-md font-normal pb-4">{item.feedback}</div>{" "}
-            <div className="pt-2 mb-4 pr-4 pb-2 pl-4 rounded-main bg-whiteGrey 	text-transform: capitalize text-md font-semibold text-navyBlue">
+            <div className="text-md pb-4 font-bold">{item.title}</div>{" "}
+            <div className="text-md pb-4 font-normal">{item.feedback}</div>{" "}
+            <div className="text-transform: text-md mb-4 rounded-main bg-whiteGrey pb-2 pl-4 	pr-4 pt-2 font-semibold capitalize text-navyBlue">
               {item.tag}
             </div>
-            <div className="clickbar flex row  justify-between items-center w-full pt-2  pb-2  rounded-main text-transform: capitalize text-md font-semibold">
+            <div className="clickbar row text-transform:  text-md flex w-full items-center  justify-between  rounded-main pb-2 pt-2 font-semibold capitalize">
               <div
-                className="flex row pt-2 pr-4 pb-2 pl-4 align-baseline items-center gap-4 bg-whiteGrey rounded-main"
+                className="row flex items-center gap-4 rounded-main bg-whiteGrey pb-2 pl-4 pr-4 pt-2 align-baseline"
                 onClick={(e) => {
                   e.stopPropagation(); // stop event propagation
                   handleVoteCounter(item.id);

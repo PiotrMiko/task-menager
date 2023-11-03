@@ -7,7 +7,7 @@ export default function NavBar({ updated }) {
     updated(toggleFilters);
   }, [toggleFilters]);
   return (
-    <div className="h-20 w-full bg-purple flex row items-center justify-between pl-10 pr-10">
+    <div className="row flex h-20 w-full items-center justify-between bg-purple pl-10 pr-10">
       <div className="header-cont fler-col items-start  text-white ">
         <h2 className=" text-base font-bold">Frontend Mentor</h2>
         <p className="text-xs font-medium"> Feedback Board</p>

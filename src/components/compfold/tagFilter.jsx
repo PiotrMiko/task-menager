@@ -11,13 +11,13 @@ function TagFilter({ tags, allTasks, setDisplayedTasks }) {
   };
 
   return (
-    <ul className="flex row justify-start flex-wrap items-start m-4 p-4  rounded-main bg-white ">
+    <ul className="row m-4 flex flex-wrap items-start justify-start rounded-main  bg-white p-4 ">
       {tags.map((tag) => (
         <li
           key={tag}
-          className="cursor-pointer rounded-main bg-whiteGrey m-2 text-[#4661E6] pt-2 pb-2 pl-4 pr-4
-          text-xs
-          font-semibold"
+          className="m-2 cursor-pointer rounded-main bg-whiteGrey pb-2 pl-4 pr-4 pt-2 text-xs
+          font-semibold
+          text-[#4661E6]"
           onClick={() =>
             tag === "All" ? handleReset() : filterByTag(tag.toLowerCase())
           }

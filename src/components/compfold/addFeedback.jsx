@@ -30,11 +30,11 @@ export default function Modal({
   if (!activeModal) return null; // Return nothing if the modal shouldn't be shown
 
   return (
-    <div className="modal-overlay absolute inset-0 bg-whiteGrey t-2 pr-4 pb-2 pl-4">
-      <div className="btn-cont flex row items-center justify-between pt-2  pb-2  w-full">
+    <div className="modal-overlay t-2 absolute inset-0 bg-whiteGrey pb-2 pl-4 pr-4">
+      <div className="btn-cont row flex w-full items-center justify-between  pb-2  pt-2">
         {" "}
         <button
-          className="flex row justify-between align-baseline items-center gap-4  pt-4 pb-4"
+          className="row flex items-center justify-between gap-4 pb-4  pt-4 align-baseline"
           // onClick={() => setCommentsModal(false)}
         >
           <svg
@@ -59,19 +59,19 @@ export default function Modal({
           </p>
         </button>{" "}
       </div>
-      <div className="modal-content bg-white p-4 rounded-main">
-        <h2 className="text-lg font-bold mb-6">Create New Feedback</h2>
+      <div className="modal-content rounded-main bg-white p-4">
+        <h2 className="mb-6 text-lg font-bold">Create New Feedback</h2>
         {
           <div
-            className={activeModal ? " w-full h-fit bg-green-700 " : "hidden"}
+            className={activeModal ? " bg-green-700 h-fit w-full " : "hidden"}
           >
-            <form className="flex-col align-start justify-start items-center  gap-5">
+            <form className="align-start flex-col items-center justify-start  gap-5">
               <label className="text-xs font-bold">Feedback title</label>
-              <p className="text-xs font-normal text-[#647196] mb-6">
+              <p className="mb-6 text-xs font-normal text-[#647196]">
                 Add short, desreptive feedback
               </p>
               <input
-                className="bg-whiteGrey w-full rounded-main p-4 text-xs font-normal mb-6"
+                className="mb-6 w-full rounded-main bg-whiteGrey p-4 text-xs font-normal"
                 type="text"
                 name="title"
                 id=""
@@ -79,11 +79,11 @@ export default function Modal({
                 onChange={handleInputChange}
               />
               <label className="text-xs font-bold">Category</label>
-              <p className="text-xs font-normal text-[#647196] mb-6">
+              <p className="mb-6 text-xs font-normal text-[#647196]">
                 Choose a category for your feedback
               </p>
               <select
-                className="bg-whiteGrey w-full rounded-main p-4 text-xs font-normal mb-6"
+                className="mb-6 w-full rounded-main bg-whiteGrey p-4 text-xs font-normal"
                 name="tag"
                 value={inputData.tag}
                 onChange={handleInputChange}
@@ -95,12 +95,12 @@ export default function Modal({
                 <option value="feature">Feature</option>
               </select>
               <label className="text-xs font-bold">Feedback detail</label>
-              <p className="text-xs font-normal text-[#647196] mb-6">
+              <p className="mb-6 text-xs font-normal text-[#647196]">
                 Include any specific comments on what should be improved, added,
                 etc.
               </p>
               <textarea
-                className="bg-whiteGrey rounded-main w-full resize-none p-4 text-xs font-normal"
+                className="w-full resize-none rounded-main bg-whiteGrey p-4 text-xs font-normal"
                 value={inputData.feedback}
                 onChange={handleInputChange}
                 type="textarea"
@@ -111,15 +111,15 @@ export default function Modal({
               />
             </form>
 
-            <div className="flex flex-col  mt-6">
+            <div className="mt-6 flex  flex-col">
               <button
-                className="bg-purple rounded-main  text-white text-center  pt-4 pb-4 text-xs font-bold"
+                className="rounded-main bg-purple  pb-4 pt-4  text-center text-xs font-bold text-white"
                 onClick={handleAddFeedback}
               >
                 Add Feedback
               </button>
               <button
-                className="bg-[#3A4374] rounded-main  text-white text-center  pt-4 pb-4 mt-4 mb-4 text-xs font-bold"
+                className="mb-4 mt-4  rounded-main bg-[#3A4374]  pb-4 pt-4 text-center text-xs font-bold text-white"
                 onClick={() => setActiveModal(false)}
               >
                 Cancel

@@ -53,15 +53,15 @@ export default function App() {
   const handleCommentUpdate = (updatedJoice) => {
     setAllTasks((prevTasks) =>
       prevTasks.map((task) =>
-        task.id === updatedJoice.id ? updatedJoice : task
-      )
+        task.id === updatedJoice.id ? updatedJoice : task,
+      ),
     );
     setJoice(updatedJoice);
     setDisplayModal(false);
   };
   const handleUpdate = (updatedData) => {
     setAllTasks(
-      allTasks.map((item) => (item.id === updatedData.id ? updatedData : item))
+      allTasks.map((item) => (item.id === updatedData.id ? updatedData : item)),
     );
 
     setEditModalActive(false);
@@ -102,18 +102,18 @@ export default function App() {
 
   return (
     <>
-      <div className="font-[jost] p-0 m-0 border-0">
+      <div className="m-0 border-0 p-0 font-[jost]">
         {" "}
         <NavBar updated={handleToggleTest} />
         <div className={navBar ? "flex h-screen w-full" : "hidden"}>
-          <div className="absolute  w-72 h-full bg-whiteGrey">
+          <div className="absolute  h-full w-72 bg-whiteGrey">
             <TagFilter
               tags={tags}
               allTasks={allTasks}
               setDisplayedTasks={setDisplayedTasks}
             />
 
-            <div className="roadMapCont flex-col m-4 p-6 bg-white">
+            <div className="roadMapCont m-4 flex-col bg-white p-6">
               <RoadMapCounter
                 allTasks={allTasks}
                 openRoadModal={handleOpenRoadModal}
@@ -124,7 +124,7 @@ export default function App() {
       </div>
       <div className="absolute inset-0 top-20 -z-20">
         {" "}
-        <div className="column-two bg-whiteGrey flex flex-col ">
+        <div className="column-two flex flex-col bg-whiteGrey ">
           <TopBar
             onAddFeedbackClick={handleAddFeedbackClick}
             allTasks={allTasks}
@@ -133,7 +133,7 @@ export default function App() {
 
           {toggleTaskDisplay ? (
             <div
-              className={"absolute top-16 -z-20 tasks-cont pb-2  bg-whiteGrey"}
+              className={"tasks-cont absolute top-16 -z-20 bg-whiteGrey  pb-2"}
             >
               <TasksDisplay
                 displayedTasks={displayedTasks}

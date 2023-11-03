@@ -1,7 +1,7 @@
 function SortComponent({ selectedOption, handleChange }) {
   return (
-    <div className="sort flex row align-middle items-center">
-      <p className="text-white text-xs font-normal">Sort by:</p>
+    <div className="sort row flex items-center align-middle">
+      <p className="text-xs font-normal text-white">Sort by:</p>
       <select
         className="bg-darkgrey text-xs font-bold text-white"
         id="sort"

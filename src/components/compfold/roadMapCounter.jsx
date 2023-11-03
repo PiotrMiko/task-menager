@@ -33,27 +33,27 @@ function RoadMapCounts({ allTasks, openRoadModal }) {
   return (
     <>
       {" "}
-      <h1 className="Roadmap text-lg font-bold pb-6">Roadmap</h1>
+      <h1 className="Roadmap pb-6 text-lg font-bold">Roadmap</h1>
       <div
-        className="cursor-pointer text-xs font-semibold underline text-[#4661E6]"
+        className="cursor-pointer text-xs font-semibold text-[#4661E6] underline"
         onClick={() => openRoadModal(!false)}
       >
         View
       </div>
       <ul>
-        <li className=" text-[#647196] flex row justify-between  pb-2">
+        <li className=" row flex justify-between pb-2  text-[#647196]">
           <a href="">Planned:</a>
           <span className=" text-base font-bold">
             {roadMapCounts.plannedCount}
           </span>
         </li>
-        <li className=" text-[#647196] flex row justify-between pb-2">
+        <li className=" row flex justify-between pb-2 text-[#647196]">
           <a href=""> inProgress:</a>{" "}
           <span className=" text-base font-bold">
             {roadMapCounts.inProgressCount}
           </span>
         </li>
-        <li className=" text-[#647196] flex row justify-between pb-2">
+        <li className=" row flex justify-between pb-2 text-[#647196]">
           <a href=""> Live:</a>
           <span className=" text-base font-bold">
             {" "}

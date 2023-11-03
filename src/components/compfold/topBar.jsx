@@ -19,7 +19,7 @@ function Topbar({ onAddFeedbackClick, allTasks, update }) {
       updatedTasks = [...allTasks].sort((a, b) => b.votes - a.votes);
     } else if (selectedOption.trim() === "most comments") {
       updatedTasks = [...allTasks].sort(
-        (a, b) => b.comments.length - a.comments.length
+        (a, b) => b.comments.length - a.comments.length,
       );
     } else {
       updatedTasks = allTasks;
@@ -30,9 +30,9 @@ function Topbar({ onAddFeedbackClick, allTasks, update }) {
   };
 
   return (
-    <div className="topbar flex row justify-between over pl-4 pr-4 pt-2 pb-2 bg-darkgrey rounded-r-lg">
-      <div className="sort flex row align-middle items-center">
-        <p className="text-white text-xs font-normal">Sort by:</p>
+    <div className="topbar row over rounded-r-lg flex justify-between bg-darkgrey pb-2 pl-4 pr-4 pt-2">
+      <div className="sort row flex items-center align-middle">
+        <p className="text-xs font-normal text-white">Sort by:</p>
         <select
           className="bg-darkgrey text-xs font-bold text-white"
           id="sort"
@@ -46,7 +46,7 @@ function Topbar({ onAddFeedbackClick, allTasks, update }) {
         </select>
       </div>
       <button
-        className="text-white pl-4 pr-4 pt-4 pb-4 bg-purple rounded-main text-xs font-bold tracking-wide"
+        className="rounded-main bg-purple pb-4 pl-4 pr-4 pt-4 text-xs font-bold tracking-wide text-white"
         onClick={onAddFeedbackClick}
       >
         + Add Feedback
